@@ -1,4 +1,4 @@
-//Script for the test of Botify QA Challenge step1
+//Script for the test case 6 of Botify QA Challenge step2
 const timeout = 10000
 //typingSpeed value is set to simulate realistic typing.
 const typingSpeed = 50
@@ -25,16 +25,16 @@ describe(
 
     it('Google homepage loads', async () => {
       //Type the google search
-	  await page.waitForSelector('input[type="text"]')
+	await page.waitForSelector('input[type="text"]')
       await page.waitForSelector('input[type="submit"]')
-      await page.type('input[type="text"]', 'Site', {delay: typingSpeed})
+      await page.type('input[type="text"]', '43/20', {delay: typingSpeed})
       await page.click('input[type="submit"]')
     })
 
-    it('Verify there are 10 results', async () => {
+    it('Verify the result of division', async () => {
 	  //Check results
-	  const nbResp = (await page.$$('.LC20lb')).length
-	  expect(nbResp).toBe(10)
+	  const result = await page.$eval("#cwos", el => el.textContent);
+	  expect(result).toBe('2.15')
     })
 
   },
