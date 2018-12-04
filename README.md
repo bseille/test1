@@ -1,5 +1,5 @@
 # test1
-Botify QA challenge step1
+Botify QA challenge test case 6 step2
 
 Main is test.js
 
